@@ -10,7 +10,7 @@ namespace WpfEx.Tests.AttachedBehaviors
     [TestFixture]
     public class TextBoxDoubleValidatorTests
     {
-        /// <summary> 
+        /// <summary>  
         /// Prametrized unit test for IsValid method.
         /// </summary> 
         /// <remarks>
@@ -18,7 +18,9 @@ namespace WpfEx.Tests.AttachedBehaviors
         /// true even for non-valid double string like "."; thats because user could continue typeing something like
         /// ".1" and this string is valid.
         /// </remarks>
+        [TestCase("", Result = true)]
         [TestCase(".", Result = true)]
+        [TestCase("-.", Result = true)]
         [TestCase("-.1", Result = true)]
         [TestCase("+", Result = true)]
         [TestCase("-", Result = true)]

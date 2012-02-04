@@ -9,9 +9,10 @@ namespace WpfEx.AttachedBehaviors
     /// <see cref="TextBox"/> attached properties with some special behavior.
     /// </summary>
     /// <remarks>
-    /// Class contains attached behaivor that extends existig <see cref="TextBox"/> behavior like IsInteger -
-    /// user could type only numberic string or IsDouble - user could type +, -, . and numeric values
-    /// or IsDoubl
+    /// Class contains attached behaivor that extends existig <see cref="TextBox"/> behavior with
+    /// attached properties like:
+    /// (1) IsInteger - that restricts user input to numbers or
+    /// (2) IsDouble - that restricts user input to +, -, . and numeric values.
     /// </remarks>
     public static class TextBoxBehavior
     {
