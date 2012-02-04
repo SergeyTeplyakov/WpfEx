@@ -1,0 +1,47 @@
+﻿<Window x:Class="WpfEx.Samples.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:Samples="clr-namespace:WpfEx.Samples"
+        xmlns:AttachedBehaviors="clr-namespace:WpfEx.AttachedBehaviors;assembly=WpfEx" Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+            
+        </Grid.RowDefinitions>
+        
+        <TextBlock Text="Simple text box (only integers):" 
+                   HorizontalAlignment="Right"
+                   Margin="0,0,5,0"/>
+        <TextBox x:Name="simpleTextBox" 
+                 Grid.Column="1"
+                 AttachedBehaviors:TextBoxBehavior.IsInteger="True"/>
+
+        <TextBlock Text="Custom text box (only integers):" 
+                   Grid.Row="1"
+                   HorizontalAlignment="Right"
+                   Margin="0,0,5,0"/>
+        
+        <Samples:CustomTextBox x:Name="customTextBox" 
+                               Grid.Column="1"
+                               Grid.Row="1"
+                               AttachedBehaviors:TextBoxBehavior.IsInteger="True"/>
+
+        <TextBlock Text="Simple text box (only doubles):" 
+                   Grid.Row="2"
+                   HorizontalAlignment="Right"
+                   Margin="0,0,5,0"/>
+        <TextBox Grid.Column="1"
+                 Grid.Row="2"
+                 AttachedBehaviors:TextBoxBehavior.IsDouble="True"/>
+
+    </Grid>
+    
+    
+</Window>
